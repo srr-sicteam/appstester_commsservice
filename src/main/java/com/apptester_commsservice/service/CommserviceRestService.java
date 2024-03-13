@@ -1,7 +1,5 @@
 package com.apptester_commsservice.service;
 
-import com.apptester_commsservice.dto.CommserviceOutgoingRequest;
-import com.google.gson.Gson;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -13,15 +11,12 @@ import org.springframework.web.client.RestTemplate;
 public class CommserviceRestService {
 
     RestTemplate restTemplate = new RestTemplate();
-    Gson gson = new Gson();
 
     public String sendRequest() {
-        CommserviceOutgoingRequest request = CommserviceOutgoingRequest.builder()
-                .message("Hello world!")
-                .build();
-        String json = gson.toJson(request);
-        HttpEntity<String> requestEntity = new HttpEntity<>(json, new HttpHeaders());
-        ResponseEntity<String> response = restTemplate.exchange("http://example.com", HttpMethod.POST, requestEntity, String.class);
+        HttpEntity<String> requestEntity = new HttpEntity<>(new HttpHeaders());
+        ResponseEntity<String> response = restTemplate.exchange("https://sicteam.ru/stage/webservice/rest/server.php" +
+                "?moodlewsrestformat=json&wstoken=0a89a62b754d8dfedf9338fd33cab9f3" +
+                "&wsfunction=qtype_adtesting_get_submissions_to_check", HttpMethod.GET, requestEntity, String.class);
         return response.getBody();
     }
 }
