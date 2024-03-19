@@ -24,12 +24,12 @@ public class CommsreviceController {
         while (true) {
             generalResponse = commserviceRestService.checkForRequests();
             if (!generalResponse.isEmpty()) {
-//                List<String> taskResponses = new ArrayList<>();
-//                MoodleResponse moodleResponse = commserviceModel.convertResponse(generalResponse);
-//                for (int i = 0; i < moodleResponse.attemptStepsIds.size(); i++) {
-//                    taskResponses.add(commserviceRestService.receiveTask(moodleResponse.attemptStepsIds.get(i)));
-//                }
-//                generalResponse = commserviceModel.uniteResponses(generalResponse, taskResponses);
+                List<String> taskResponses = new ArrayList<>();
+                List<Integer> attemptStepsIds = commserviceModel.gateAttemptStepsIds(generalResponse);
+                for (Integer attemptStepsId : attemptStepsIds) {
+                    taskResponses.add(commserviceRestService.receiveTask(attemptStepsId));
+                }
+                generalResponse = commserviceModel.uniteResponses(generalResponse, taskResponses);
                 break;
             }
             try {

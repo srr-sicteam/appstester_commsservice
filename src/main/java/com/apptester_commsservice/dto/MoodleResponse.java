@@ -8,6 +8,10 @@ import java.util.List;
 @Data
 public class MoodleResponse {
 
-    public int attemptId;
-    public List<Integer> attemptStepsIds;
+    private int attemptId;
+    private List<Integer> attemptStepsIds;
+
+    public List<Integer> GetAttemptStepsIds() {
+        return attemptStepsIds;
+    }
 }
