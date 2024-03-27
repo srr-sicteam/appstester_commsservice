@@ -1,8 +1,8 @@
-package com.apptester_commsservice.model;
+package com.appstester_commsservice.model;
 
-import com.apptester_commsservice.model.taskParameters.StudentAnswerType;
-import com.apptester_commsservice.model.taskParameters.TaskType;
-import com.apptester_commsservice.model.taskParameters.TeacherAnswerType;
+import com.appstester_commsservice.model.taskParameters.StudentAnswerType;
+import com.appstester_commsservice.model.taskParameters.TaskType;
+import com.appstester_commsservice.model.taskParameters.TeacherAnswerType;
 import lombok.Builder;
 
 @Builder

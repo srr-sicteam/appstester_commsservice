@@ -1,4 +1,4 @@
-package com.apptester_commsservice.service;
+package com.appstester_commsservice.service;
 
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;

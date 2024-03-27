@@ -1,4 +1,4 @@
-package com.apptester_commsservice;
+package com.appstester_commsservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

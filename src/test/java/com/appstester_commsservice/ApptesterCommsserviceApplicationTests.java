@@ -1,4 +1,4 @@
-package com.apptester_commsservice;
+package com.appstester_commsservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

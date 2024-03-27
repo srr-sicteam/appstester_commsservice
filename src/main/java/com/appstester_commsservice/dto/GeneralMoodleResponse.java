@@ -1,4 +1,4 @@
-package com.apptester_commsservice.dto;
+package com.appstester_commsservice.dto;
 
 import lombok.Getter;
 
